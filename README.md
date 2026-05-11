@@ -14,7 +14,7 @@ Traditional bank queues cause excessive waiting time, overcrowding, and poor cus
 
 - Customers book tokens online from home via a web interface
 - Token data stored and synced in real time using Firebase
-- NodeMCU fetches live queue data and displays it on an LCD inside the bank
+- ESP8266 NodeMCU fetches live queue data and displays it on an LCD inside the bank
 - PIR sensor detects customer presence at the counter automatically
 - Firebase Cloud Messaging sends notifications when a customer's turn is near
 
@@ -27,7 +27,7 @@ Traditional bank queues cause excessive waiting time, overcrowding, and poor cus
 | ESP8266 NodeMCU | Main Wi-Fi microcontroller |
 | PIR / IR Sensor | Customer presence detection |
 | 16x2 LCD Display | Shows current serving token |
-| Firebase Realtime DB | Cloud token storage & sync |
+| Firebase Realtime Database | Cloud token storage & sync |
 | Firebase Cloud Messaging | Customer notifications |
 | ThingSpeak | IoT data visualization |
 | Arduino IDE | Programming NodeMCU |
@@ -43,7 +43,7 @@ Three-tier architecture:
 
 **Cloud Module (Firebase)** → Real-time sync → Sends FCM notifications
 
-**Bank Module (NodeMCU + LCD)** → Fetches token → Displays on LCD → PIR detects presence
+**Bank Module (ESP8266 NodeMCU + LCD)** → Fetches token → Displays on LCD → PIR detects presence
 
 ---
 
@@ -51,7 +51,7 @@ Three-tier architecture:
 
 1. Customer opens web app and books a token
 2. Unique token number generated and stored in Firebase
-3. NodeMCU fetches current token from Firebase via Wi-Fi
+3. ESP8266 NodeMCU fetches current token from Firebase via Wi-Fi
 4. LCD screen inside bank displays running token number
 5. PIR sensor detects customer at counter
 6. Firebase updates queue and notifies next customer
@@ -80,7 +80,9 @@ Three-tier architecture:
 
 ## 📁 Files
 
-- `iot_project.pdf` — Full project documentation with code, architecture & results
+- `smart_queue_system.ino` — ESP8266 NodeMCU source code
+- `iot_project.pdf` — Full project documentation
+- `README.md` — Project overview and setup details
 
 ---
 
@@ -89,4 +91,5 @@ Three-tier architecture:
 **Urfiya Libaibe** — CSE '27 @ VVCE Mysore
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/urfiya-libaibe-34624b333)
+
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat&logo=gmail&logoColor=white)](mailto:urfiyalibaibe410@gmail.com)
